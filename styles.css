@@ -19,7 +19,7 @@ rp{
 }
 .readability{
     text-decoration: none;
-    background-color: white;
+    background-color: aquamarine;
     border-radius: 5px;
 }
 /* header Section */
@@ -33,7 +33,6 @@ rp{
 /* drawContainer */
 .drawContainer{
     display: flex;
-    flex-wrap: wrap;
     align-self: center;
     width: 500px;
     height: 500px;
@@ -42,19 +41,37 @@ rp{
     box-sizing: content-box;
     border: black solid 5px;
 }
-
+.pxRow{
+    display: flex;
+}
+.px{
+    background-color: beige;
+    border: 1px;
+}
 /* button input section */
 .buttonContainer{
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    align-items: center;
 }
 .button{
     background-color: aquamarine;
     border-radius: 5px;
     width: 110px;
+    height: 35px;
     font-size: large;
+}
+.scaleInputValue{
+    width: 65px;
+    text-align: center;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 /* footer Section */
 .footer{
