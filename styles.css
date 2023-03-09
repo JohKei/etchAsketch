@@ -1,0 +1,68 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-image: url(./images/backGround.png);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+.rm{
+    margin: 0;
+}
+rp{
+    padding: 0;
+}
+.readability{
+    text-decoration: none;
+    background-color: white;
+    border-radius: 5px;
+}
+/* header Section */
+.headerContainer{
+    margin: 0 auto;
+}
+.pageTitle{
+    text-align: center;
+    width: fit-content;
+}
+/* drawContainer */
+.drawContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 500px;
+    height: 500px;
+    max-width: 500px;
+    max-height: 500px;
+    box-sizing: content-box;
+    border: black solid 5px;
+}
+
+/* button input section */
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.button{
+    background-color: aquamarine;
+    border-radius: 5px;
+    width: 110px;
+    font-size: large;
+}
+/* footer Section */
+.footer{
+    position: absolute; 
+    bottom: 0;
+    text-align: center;
+    align-self: center;
+}
+.repoLink{
+    font-size: large;
+}
