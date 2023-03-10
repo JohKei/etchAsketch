@@ -16,24 +16,44 @@
     scaleInput.addEventListener("input", updateScaleValueEl, false)
 
     function updateScaleValueEl(){
-        showScaleValueEl.textContent = `${scaleInput.value} x ${scaleInput.value}`
+        showScaleValueEl.textContent = `${scaleInput.value}px x ${scaleInput.value}px`
+        removeChild()
+        createPx()
+    }
+    updateScaleValueEl()
+//remove Childs function
+    function removeChild(){
+        while (sketchEl.firstChild){
+            sketchEl.removeChild(sketchEl.firstChild)
+        }
     }
 //createPX function()
-    //check value
     //create scaleInput.value row divs
     //add .pxRow class to each row
     //create scaleInput.value pxDivs in each row div -> 
     //add .px class to each pxDiv
     //add #px for each .px (#px = px ID)
-//randomRgbValue() function
-    function createRandomNumber(){
-    return Math.floor(Math.random()*255)
+    function createPx(){
+        for (let i = 0; i<scaleInput.value; i++){
+            let pxRow = document.createElement("div")
+            pxRow.classList.add("pxRow")
+            sketchEl.appendChild(pxRow)
+            for (let i = 0; i < scaleInput.value; i++){
+                let pxDiv = document.createElement("div")
+                pxDiv.classList.add("px")
+                pxRow.appendChild(pxDiv)
+            }
+        }
     }
 //createRandomColor() function
+        //randomRgbValue() function
     //rgb(
     //    random(0-255),random(0-255),random(0-255)
     //)
     function createRandomRgbValue(){
+        function createRandomNumber(){
+            return Math.floor(Math.random()*255)
+            }
         console.log(createRandomNumber(),createRandomNumber(),createRandomNumber())
     }
 //color mode function()
