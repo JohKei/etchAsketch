@@ -33,15 +33,19 @@
     //create scaleInput.value pxDivs in each row div -> 
     //add .px class to each pxDiv
     //add #px for each .px (#px = px ID)
+    
     function createPx(){
+        let idNum = 0
         for (let i = 0; i<scaleInput.value; i++){
             let pxRow = document.createElement("div")
             pxRow.classList.add("pxRow")
             sketchEl.appendChild(pxRow)
-            for (let i = 0; i < scaleInput.value; i++){
+            for (let i = 0; i <= scaleInput.value; i++){
                 let pxDiv = document.createElement("div")
                 pxDiv.classList.add("px")
+                pxDiv.setAttribute("id", `a${idNum}`)
                 pxRow.appendChild(pxDiv)
+                idNum++
             }
         }
     }
