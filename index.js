@@ -20,6 +20,8 @@
         removeChild()
         createPx()
     }
+//#todo to improve Browser performance i need a new EventListener wich is listening for 
+//updateScaleValueEl() to end and then call removeChild() & createPx()
     updateScaleValueEl()
 //remove Childs function
     function removeChild(){
@@ -33,7 +35,6 @@
     //create scaleInput.value pxDivs in each row div -> 
     //add .px class to each pxDiv
     //add #px for each .px (#px = px ID)
-    
     function createPx(){
         let idNum = 0
         for (let i = 0; i<scaleInput.value; i++){
@@ -49,6 +50,17 @@
             }
         }
     }
+//eventlistener test to console log hovered over Px id
+    const target = document.getElementsByClassName("px")
+    for (const px of target){
+        px.addEventListener("mouseover", ()=>{
+            console.log(px)
+            id= px.id
+            console.log(id)
+            document.getElementById(id).style.backgroundColor=`rgb(${createRandomRgbValue()})`
+        })
+    }
+
 //createRandomColor() function
         //randomRgbValue() function
     //rgb(
@@ -58,7 +70,7 @@
         function createRandomNumber(){
             return Math.floor(Math.random()*255)
             }
-        console.log(createRandomNumber(),createRandomNumber(),createRandomNumber())
+        return `${createRandomNumber()},${createRandomNumber()},${createRandomNumber()}`
     }
 //color mode function()
     // if colorBtn active

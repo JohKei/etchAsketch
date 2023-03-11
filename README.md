@@ -8,3 +8,6 @@ This will be a Digital Etch Sketch
     10.03.2023
         added createPx() function
             I'm still missing applying ID's to each div
+    11.03.2023
+        edit createPx() function to add unique Id to each Px
+        
