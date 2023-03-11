@@ -1,5 +1,6 @@
 //For this to work i need:
-
+    let colorMode = true
+    let blackMode = false
 //a sketch field
     const sketchEl = document.querySelector("#drawContainer")
 //color mode button
@@ -19,8 +20,8 @@
         showScaleValueEl.textContent = `${scaleInput.value}px x ${scaleInput.value}px`
         removeChild()
         createPx()
+        checkMode()
     }
-//#todo to improve Browser performance i need a new EventListener wich is listening for 
 //updateScaleValueEl() to end and then call removeChild() & createPx()
     updateScaleValueEl()
 //remove Childs function
@@ -50,17 +51,6 @@
             }
         }
     }
-//eventlistener test to console log hovered over Px id
-    const target = document.getElementsByClassName("px")
-    for (const px of target){
-        px.addEventListener("mouseover", ()=>{
-            console.log(px)
-            id= px.id
-            console.log(id)
-            document.getElementById(id).style.backgroundColor=`rgb(${createRandomRgbValue()})`
-        })
-    }
-
 //createRandomColor() function
         //randomRgbValue() function
     //rgb(
@@ -76,13 +66,63 @@
     // if colorBtn active
         //listen to hover over each #px
         //#px.style.backgroundColor="createRandomColor"
+    function colorModeFunc(){
+        const target = document.getElementsByClassName("px")
+        for (const px of target){
+            px.addEventListener("mouseover", ()=>{
+                id= px.id
+                document.getElementById(id).style.backgroundColor=`rgb(${createRandomRgbValue()})`
+            })
+        }
+    }
 //black&white function()
     //if blackBtn active
         //listen to hover over each #px
         //#px.style.backgroundColor="rgb(0,0,0) = black"
-//clear function()
-    //set all divs background back to white
-//hoverDiv function() -> change all .px color based on mode
-    //hover over 
+    function blackModeFunc(){
+        const target = document.getElementsByClassName("px")
+        for (const px of target){
+            px.addEventListener("mouseover", ()=>{
+                id= px.id
+                document.getElementById(id).style.backgroundColor=`rgb(0,0,0)`
+            })
+        }
+    }
+//clear 
+    clearBtn.addEventListener("click", ()=>{
+    updateScaleValueEl()
+})
+//Check mode function
+//default should be color mode
+//if colorMode active (active == true) add class (btnActive) to colorBtn
+//check wether colorMode or BlackMode is active and return those functions
+    
+    colorBtn.addEventListener("click", () =>{
+        colorMode = true
+        blackMode = false
+        colorBtn.classList.add("btnActive")
+        blackBtn.classList.remove("btnActive")
+        checkMode()
+    })
+    blackBtn.addEventListener("click", () =>{
+        colorMode = false
+        blackMode = true
+        colorBtn.classList.remove("btnActive")
+        blackBtn.classList.add("btnActive")
+        checkMode()
+    })
+    function checkMode (){
+        if (colorMode == true){
+            colorBtn.classList.add("btnActive")
+            blackBtn.classList.remove("btnActive")
+            colorModeFunc()
+        }else if (blackMode == true){
+            blackModeFunc()
+            colorBtn.classList.remove("btnActive")
+            blackBtn.classList.add("btnActive")
+        }
+    }
+
+
 
 

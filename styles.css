@@ -88,3 +88,15 @@ rp{
 .repoLink{
     font-size: large;
 }
+.btnActive{
+    scale: 1.1;
+    background-color: rgb(57, 203, 247);
+    box-shadow: 0 2px #666;
+
+}
+
+#clearBtn:active {
+    background-color: rgb(57, 203, 247);
+    box-shadow: 0 2px #666;
+    scale: 1.1;
+}
